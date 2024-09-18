@@ -3,11 +3,12 @@ public class JavaClass {
         System.out.println("Hello world");
         int a = 4;
         int b = a + 2;
-        String c = System.in.read();
-        if (c == "Yes"){
-            System.out.println("Maybe...");
-        }
+
 
         System.out.println(b);
+        MyMethod(a);
+    }
+    static void MyMethod(int say){
+        System.out.println(say);
     }
 }

@@ -1,0 +1,194 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000025a46f8c2c4, pid=13928, tid=14184
+#
+# JRE version: OpenJDK Runtime Environment (22.0.2+9) (build 22.0.2+9-70)
+# Java VM: OpenJDK 64-Bit Server VM (22.0.2+9-70, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [cyjagent.dll+0xc2c4]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.1\lib\idea_rt.jar=55412:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.1\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -agentpath:C:\Program Files\Palo Alto Networks\Traps\cyjagent.dll JavaClass
+
+Host: Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.4717)
+Time: Thu Sep 12 15:28:33 2024 GMT Daylight Time elapsed time: 0.411189 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000025a453d74f0):  JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=14184, stack(0x000000d032900000,0x000000d032a00000) (1024K)]
+
+Stack: [0x000000d032900000,0x000000d032a00000],  sp=0x000000d0329fd9d0,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [cyjagent.dll+0xc2c4]  (no source info available)
+V  [jvm.dll+0x5a866e]  (no source info available)
+V  [jvm.dll+0x59fc32]  (no source info available)
+V  [jvm.dll+0x59fd2b]  (no source info available)
+V  [jvm.dll+0x5c49f0]  (no source info available)
+V  [jvm.dll+0x21cb2a]  (no source info available)
+V  [jvm.dll+0x7ebe8c]  (no source info available)
+V  [jvm.dll+0x7ecf26]  (no source info available)
+V  [jvm.dll+0x7ed534]  (no source info available)
+V  [jvm.dll+0x7ed1b8]  (no source info available)
+V  [jvm.dll+0x26d6ab]  (no source info available)
+V  [jvm.dll+0x26d8da]  (no source info available)
+V  [jvm.dll+0x5e8187]  (no source info available)
+V  [jvm.dll+0x5eb186]  (no source info available)
+V  [jvm.dll+0x3ddbfd]  (no source info available)
+V  [jvm.dll+0x3dd1fd]  (no source info available)
+C  0x0000025a5817a27c  (no source info available)
+
+The last pc belongs to invokestatic (printed below).
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.nio.ch.Net.<clinit>()V+210 java.base@22.0.2
+v  ~StubRoutines::call_stub 0x0000025a5816100d
+j  sun.nio.ch.NioSocketImpl.create(Z)V+66 java.base@22.0.2
+j  java.net.DelegatingSocketImpl.create(Z)V+5 java.base@22.0.2
+j  java.net.Socket.<init>(Ljava/net/SocketAddress;Ljava/net/SocketAddress;Z)V+28 java.base@22.0.2
+j  java.net.Socket.<init>(Ljava/lang/String;I)V+34 java.base@22.0.2
+j  com.intellij.rt.execution.application.AppMainV2$1.run()V+10
+v  ~StubRoutines::call_stub 0x0000025a5816100d
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000000000000
+
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000025a453d78b0, RCX=0x0000000000000000, RDX=0x0000025a46973fb0
+RSP=0x000000d0329fd9d0, RBP=0x0000025a50c1f8d0, RSI=0x0000000000000000, RDI=0x0000025a451a1390
+R8 =0x000000d0329fd818, R9 =0x0000025a50c1f8d0, R10=0x0000000000000000, R11=0x0000000000000246
+R12=0x0000025a451a1390, R13=0x0000025a4519ffd0, R14=0x0000025a453d74f0, R15=0x0000000000000000
+RIP=0x0000025a46f8c2c4, EFLAGS=0x0000000000010202
+
+
+Register to memory mapping:
+
+RAX=0x0 is null
+RBX=0x0000025a453d78b0 points into unknown readable memory: 0x00007ffa73aeeac0 | c0 ea ae 73 fa 7f 00 00
+RCX=0x0 is null
+RDX=0x0000025a46973fb0 points into unknown readable memory: 0x0000025a453d74f0 | f0 74 3d 45 5a 02 00 00
+RSP=0x000000d0329fd9d0 is pointing into the stack for thread: 0x0000025a453d74f0
+RBP=0x0000025a50c1f8d0 points into unknown readable memory: 0x0000025a50b96ee0 | e0 6e b9 50 5a 02 00 00
+RSI=0x0 is null
+RDI=0x0000025a451a1390 points into unknown readable memory: 0x2f74656e2f6e7573 | 73 75 6e 2f 6e 65 74 2f
+R8 =0x000000d0329fd818 is pointing into the stack for thread: 0x0000025a453d74f0
+R9 =0x0000025a50c1f8d0 points into unknown readable memory: 0x0000025a50b96ee0 | e0 6e b9 50 5a 02 00 00
+R10=0x0 is null
+R11=0x0000000000000246 is an unknown value
+R12=0x0000025a451a1390 points into unknown readable memory: 0x2f74656e2f6e7573 | 73 75 6e 2f 6e 65 74 2f
+R13=0x0000025a4519ffd0 points into unknown readable memory: 0x0000000000000000 | 00 00 00 00 00 00 00 00
+R14=0x0000025a453d74f0 is a thread
+R15=0x0 is null
+
+Top of Stack: (sp=0x000000d0329fd9d0)
+0x000000d0329fd9d0:   0000025a451a1390 0000025a453d78b0
+0x000000d0329fd9e0:   000000000000002f 000000070000002f
+0x000000d0329fd9f0:   0000000000000000 00000000ffffffff
+0x000000d0329fda00:   0000025a65693400 0000025a50c1f8d0
+0x000000d0329fda10:   0000000000000021 000000d0329fdbf0
+0x000000d0329fda20:   0000025a46985fe0 0000000000000000
+0x000000d0329fda30:   000000d0329fdc28 00007ffa734b866e
+0x000000d0329fda40:   0000025a46985fe0 0000000000000000
+0x000000d0329fda50:   000000d0329fdbf0 0000000000000010
+0x000000d0329fda60:   0000025a451a1390 0000000000000000
+0x000000d0329fda70:   000000000000137d 0000025a4519ffe0
+0x000000d0329fda80:   000000d0329fdb78 000000d0329fda98
+0x000000d0329fda90:   0000025a00000000 0000000000000000
+0x000000d0329fdaa0:   0000000000000000 00007ffa734f90b6
+0x000000d0329fdab0:   0000025a452e9f40 0000025a4519ffd0
+0x000000d0329fdac0:   0000025a451a13b8 0000025a451a7fb8
+0x000000d0329fdad0:   00000000000083b0 0000025a453d74f0
+0x000000d0329fdae0:   0000025a453d74f0 0000025a452ea680
+0x000000d0329fdaf0:   0000025a4524da90 0000025a4524daa8
+0x000000d0329fdb00:   0000025a4524db78 00000000000000d8
+0x000000d0329fdb10:   000000d0329fdd08 000000d0329fdc68
+0x000000d0329fdb20:   0000000000000070 0000025a4519ffd0
+0x000000d0329fdb30:   0000000000000004 0000025a46985fe0
+0x000000d0329fdb40:   000000d0329fdbf0 0000025a452e9f40
+0x000000d0329fdb50:   0000000000000020 00007ffa734afc32
+0x000000d0329fdb60:   0000025a45125601 00007ffa732d2759
+0x000000d0329fdb70:   00007ffa73b87101 00007ffa00000000
+0x000000d0329fdb80:   0000025a452e9f40 0000025a65693400
+0x000000d0329fdb90:   000000d0329fdfb0 0000025a45125660
+0x000000d0329fdba0:   0000000000000000 00007ffa734afd2b
+0x000000d0329fdbb0:   000000d0329fdcb8 0000000000000000
+0x000000d0329fdbc0:   0000025a4519ffd0 0000025a45125660 
+
+Instructions: (pc=0x0000025a46f8c2c4)
+0x0000025a46f8c1c4:   00 00 03 72 2d 44 8b ce 48 8d 05 3d df 01 00 ba
+0x0000025a46f8c1d4:   2f 00 00 00 4e 8b 0c c8 48 8b 89 10 03 00 00 4c
+0x0000025a46f8c1e4:   8d 05 56 de 01 00 e8 51 4f ff ff 48 8b 0d ea 37
+0x0000025a46f8c1f4:   02 00 48 3b cb 74 68 f6 81 1c 03 00 00 10 74 5f
+0x0000025a46f8c204:   80 b9 19 03 00 00 02 72 56 4c 8b 8c 24 90 00 00
+0x0000025a46f8c214:   00 4c 8d 05 24 de 01 00 48 8b 89 10 03 00 00 ba
+0x0000025a46f8c224:   31 00 00 00 e8 13 4f ff ff eb 34 49 8b 0f 4c 8b
+0x0000025a46f8c234:   c3 48 8b d6 e8 f3 63 00 00 48 8b 84 24 b0 00 00
+0x0000025a46f8c244:   00 89 18 48 8b 0d 7a 4b 02 00 4c 8b c6 33 d2 ff
+0x0000025a46f8c254:   15 a7 4f 01 00 eb 08 a8 02 75 04 c6 47 40 01 b8
+0x0000025a46f8c264:   ff ff ff ff f0 0f c1 47 10 4c 8b b4 24 88 00 00
+0x0000025a46f8c274:   00 83 f8 01 75 42 48 8b 4f 18 48 81 c1 70 01 00
+0x0000025a46f8c284:   00 ff 15 1d 50 01 00 48 8b 0f 48 8b 47 08 48 89
+0x0000025a46f8c294:   08 48 89 41 08 48 8b 4f 18 48 81 c1 70 01 00 00
+0x0000025a46f8c2a4:   ff 15 06 50 01 00 48 8b 0d 17 4b 02 00 4c 8b c7
+0x0000025a46f8c2b4:   33 d2 ff 15 44 4f 01 00 48 8b 4d 20 48 8b 55 10
+0x0000025a46f8c2c4:   48 8b 01 48 8b 80 08 01 00 00 ff 15 0c 50 01 00
+0x0000025a46f8c2d4:   85 c0 74 40 48 8b 0d 01 37 02 00 48 8d 15 fa 36
+0x0000025a46f8c2e4:   02 00 48 3b ca 74 2d f6 81 1c 03 00 00 10 74 24
+0x0000025a46f8c2f4:   80 b9 19 03 00 00 03 72 1b 48 8b 89 10 03 00 00
+0x0000025a46f8c304:   4c 8d 05 35 dd 01 00 ba 15 00 00 00 44 8b c8 e8
+0x0000025a46f8c314:   68 4d ff ff 48 8b 6c 24 78 48 8b b4 24 80 00 00
+0x0000025a46f8c324:   00 48 83 c4 50 41 5f 5f 5b c3 cc cc 40 57 48 83
+0x0000025a46f8c334:   ec 30 f6 81 78 01 00 00 04 48 8b f9 0f 85 87 02
+0x0000025a46f8c344:   00 00 48 89 5c 24 40 45 33 c9 48 89 6c 24 48 33
+0x0000025a46f8c354:   d2 48 89 74 24 50 48 8b 71 20 45 8d 41 32 48 8b
+0x0000025a46f8c364:   ce 48 8b 06 48 8b 40 08 ff 15 6e 4f 01 00 48 8d
+0x0000025a46f8c374:   2d 67 36 02 00 85 c0 74 37 48 8b 0d 5c 36 02 00
+0x0000025a46f8c384:   48 3b cd 74 2b f6 81 1c 03 00 00 10 74 22 80 b9
+0x0000025a46f8c394:   19 03 00 00 02 72 19 48 8b 89 10 03 00 00 ba 11
+0x0000025a46f8c3a4:   00 00 00 89 44 24 20 44 8d 4a 21 e8 7c dc ff ff
+0x0000025a46f8c3b4:   48 8b 06 45 33 c9 33 d2 48 8b ce 48 8b 40 08 45 
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x0000025a451a1390 points into unknown readable memory: 0x2f74656e2f6e7573 | 73 75 6e 2f 6e 65 74 2f
+stack at sp + 1 slots: 0x0000025a453d78b0 points into unknown readable memory: 0x00007ffa73aeeac0 | c0 ea ae 73 fa 7f 00 00
+stack at sp + 2 slots: 0x000000000000002f is an unknown value
+stack at sp + 3 slots: 0x000000070000002f is an unknown value
+stack at sp + 4 slots: 0x0 is null
+stack at sp + 5 slots: 0x00000000ffffffff is an unknown value
+stack at sp + 6 slots: 0x0000025a65693400 points into unknown readable memory: 0x757300213960ffff | ff ff 60 39 21 00 73 75
+stack at sp + 7 slots: 0x0000025a50c1f8d0 points into unknown readable memory: 0x0000025a50b96ee0 | e0 6e b9 50 5a 02 00 00
+
+invokestatic  184 invokestatic  [0x0000025a5817a1e0, 0x0000025a5817a4c0]  736 bytes
+[MachCode]
+  0x0000025a5817a1e0: 4883 ec08 | c5fa 1104 | 24eb 1f48 | 83ec 10c5 | fb11 0424 | eb14 4883 | ec10 4889 | 0424 48c7 
+  0x0000025a5817a200: 4424 0800 | 0000 00eb | 0150 488b | 4dd0 410f | b755 0148 | 8b49 306b | d218 488d | 4c11 080f 
+  0x0000025a5817a220: b659 1681 | fbb8 0000 | 000f 84bd | 0000 00bb | b800 0000 | e805 0000 | 00e9 9900 | 0000 488b 
+  0x0000025a5817a240: d348 8d44 | 2408 4c89 | 6dc0 498b | cfc5 f877 | 4989 afb0 | 0300 0049 | 8987 a003 | 0000 4883 
+  0x0000025a5817a260: ec20 40f6 | c40f 0f84 | 1900 0000 | 4883 ec08 | 48b8 90d1 | 2e73 fa7f | 0000 ffd0 | 4883 c408 
+  0x0000025a5817a280: e90c 0000 | 0048 b890 | d12e 73fa | 7f00 00ff | d048 83c4 | 2049 c787 | a003 0000 | 0000 0000 
+  0x0000025a5817a2a0: 49c7 87b0 | 0300 0000 | 0000 0049 | c787 a803 | 0000 0000 | 0000 c5f8 | 7749 837f | 0800 0f84 
+  0x0000025a5817a2c0: 0500 0000 | e937 6cfe | ff4c 8b6d | c04c 8b75 | c84e 8d74 | f500 c348 | 8b4d d041 | 0fb7 5501 
+  0x0000025a5817a2e0: 488b 4930 | 6bd2 1848 | 8d4c 1108 | 488b 1948 | 8b5b 0848 | 8b5b 0848 | 8b5b 1880 | bb20 0100 
+  0x0000025a5817a300: 0005 0f84 | 0d00 0000 | 4c3b bb30 | 0100 000f | 851a ffff | ff0f b651 | 1548 8b19 | 4c89 6dc0 
+  0x0000025a5817a320: 448b ea0f | b651 1449 | ba40 c8b8 | 73fa 7f00 | 0049 8b14 | d252 418b | d54c 8b6d | c048 8b45 
+  0x0000025a5817a340: d848 85c0 | 0f84 1200 | 0000 4883 | 4008 0148 | 8358 0800 | 4883 c010 | 4889 45d8 | 488b 45d8 
+  0x0000025a5817a360: 4885 c00f | 843d 0100 | 0080 78f0 | 0a0f 8533 | 0100 0048 | 83c0 084c | 8b68 f841 | 83ed 0041 
+  0x0000025a5817a380: 83fd 020f | 8c12 0100 | 004c 8b6b | 0845 0fb7 | 6d2e 4c2b | 2841 83ed | 014e 8b6c | ec08 4d85 
+  0x0000025a5817a3a0: ed75 0ef6 | 4008 0175 | 58f0 4883 | 4808 01eb | 5045 8b6d | 0849 ba00 | 0000 005a | 0200 004d 
+  0x0000025a5817a3c0: 03ea 4d8b | d54c 3368 | 0849 f7c5 | fcff ffff | 742f 41f6 | c502 7529 | 4883 7808 | 0074 1e48 
+  0x0000025a5817a3e0: 8378 0801 | 7417 4d8b | ea4c 3368 | 0849 f7c5 | fcff ffff | 740b 4883 | 4808 02eb | 044c 8968 
+  0x0000025a5817a400: 0848 83c0 | 104c 8b68 | e841 83ed | 0241 83fd | 020f 8c84 | 0000 004c | 8b6b 0845 | 0fb7 6d2e 
+  0x0000025a5817a420: 4c2b 2841 | 83ed 014e | 8b6c ec08 | 4d85 ed75 | 0ef6 4008 | 0175 58f0 | 4883 4808 | 01eb 5045 
+  0x0000025a5817a440: 8b6d 0849 | ba00 0000 | 005a 0200 | 004d 03ea | 4d8b d54c | 3368 0849 | f7c5 fcff | ffff 742f 
+  0x0000025a5817a460: 41f6 c502 | 7529 4883 | 7808 0074 | 1e48 8378 | 0801 7417 | 4d8b ea4c | 3368 0849 | f7c5 fcff 
+  0x0000025a5817a480: ffff 740b | 4883 4808 | 02eb 044c | 8968 0848 | 83c0 104c | 8b68 d8
