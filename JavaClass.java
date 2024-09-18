@@ -1,14 +1,17 @@
 public class JavaClass {
+    int x = 5;
     public static void main(String args[]){
         System.out.println("Hello world");
-        int a = 4;
+        JavaClass myObj = new JavaClass();
+        int a = myObj.x;
         int b = a + 2;
 
 
         System.out.println(b);
-        MyMethod(a);
+        System.out.println(MyMethod(a));
     }
-    static void MyMethod(int say){
-        System.out.println(say);
+    static boolean MyMethod(int say){
+        System.out.println("Woah, its the number \"" + say + "\"");
+        return false;
     }
 }
