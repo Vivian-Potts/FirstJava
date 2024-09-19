@@ -6,6 +6,10 @@ public class JavaClass {
         int a = myObj.x;
         int b = a + 2;
 
+        Car redCar = new Car();
+        redCar.Colour = "Red";
+        redCar.Beep();
+
 
         System.out.println(b);
         System.out.println(MyMethod(a));
