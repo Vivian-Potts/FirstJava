@@ -1,6 +1,6 @@
 public class Car{
     //All Car objects will have a colour string
-    String Colour;
+    private String Colour;
 
     //This is called when the class is loaded
     static{
@@ -16,9 +16,10 @@ public class Car{
 
     //This is a constructor tied to every object in this class, its name matches the class name
     //It is called whenever a new object is made
-    Car(String carColour){
+    Car(String Colour){
         System.out.println("New car object made");
-        Colour = carColour;
+        //The "This" keyword is an alias for whatever object contains the this keyword
+        this.Colour = Colour;
 
     }
 
