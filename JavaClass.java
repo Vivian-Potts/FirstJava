@@ -1,21 +1,26 @@
 public class JavaClass {
     int x = 5;
     public static void main(String args[]){
-        System.out.println("Hello world");
-        JavaClass myObj = new JavaClass();
-        int a = myObj.x;
-        int b = a + 2;
+        System.out.println("All about objects");
 
-        Car redCar = new Car();
-        redCar.Colour = "Red";
+        //Making two car objects
+        Car redCar = new Car("Red");
+        Car blueCar = new Car("Blue");
+
+        //Calling class method only after the class is loaded
+        Car.Boop();
+
+        //Don't do this, set your variables in the class itself
+        //redCar.Colour = "Red";
+
+        //This is an object's method
         redCar.Beep();
 
+        //This is a class's method
 
-        System.out.println(b);
-        System.out.println(MyMethod(a));
-    }
-    static boolean MyMethod(int say){
-        System.out.println("Woah, its the number \"" + say + "\"");
-        return false;
+
+
+
     }
 }
+
